@@ -3306,7 +3306,7 @@
         {
          "columns":4,
          "firstgid":21175,
-         "image":"src\/animations\/animated_butterfly_3_32x32.png",
+         "image":"..tilesets\/animations\/animated_butterfly_3_32x32.png",
          "imageheight":32,
          "imagewidth":128,
          "margin":0,
@@ -3347,7 +3347,7 @@
         {
          "columns":4,
          "firstgid":21179,
-         "image":"src\/animations\/animated_butterfly_5_idle_32x32.png",
+         "image":"..tilesets\/animations\/animated_butterfly_5_idle_32x32.png",
          "imageheight":32,
          "imagewidth":128,
          "margin":0,
@@ -3388,7 +3388,7 @@
         {
          "columns":36,
          "firstgid":21183,
-         "image":"src\/animations\/animated_cat_32x32.png",
+         "image":"..tilesets\/animations\/animated_cat_32x32.png",
          "imageheight":32,
          "imagewidth":1152,
          "margin":0,
@@ -3565,7 +3565,7 @@
         {
          "columns":6,
          "firstgid":21219,
-         "image":"src\/animations\/animated_coffee_32x32.png",
+         "image":"..tilesets\/animations\/animated_coffee_32x32.png",
          "imageheight":64,
          "imagewidth":192,
          "margin":0,
