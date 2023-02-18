@@ -21,6 +21,23 @@ WA.onInit().then(() => {
 
     WA.room.area.onLeave('clock').subscribe(closePopup)
 
+    const map: CreateUIWebsiteEvent = {
+        url:  "https://google.com",
+        visible: true,
+        allowApi: true,
+        allowPolicy: "",   // The list of feature policies allowed
+        position: {
+            vertical: "top",
+            horizontal: "right",
+        },
+        size: {            // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
+            width: "100px",
+            height: "100px",
+        },
+    }
+
+    WA.ui.website.open(map)
+
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
@@ -33,21 +50,6 @@ function closePopup(){
         currentPopup.close();
         currentPopup = undefined;
     }
-}
-
-const map: CreateUIWebsiteEvent = {
-    url:  "https://google.com",
-    visible: true,
-    allowApi: true,
-    allowPolicy: "",   // The list of feature policies allowed
-    position: {
-        vertical: "top",
-        horizontal: "right",
-    },
-    size: {            // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
-        width: "100px",
-        height: "100px",
-    },
 }
 
 export {};
