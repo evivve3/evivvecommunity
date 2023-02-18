@@ -33,4 +33,50 @@ function closePopup(){
     }
 }
 
+WA.ui.website.open(website: CreateUIWebsiteEvent): Promise<UIWebsite>
+
+interface CreateUIWebsiteEvent {
+    url: string,            // Website URL
+    visible?: boolean,      // The website is visible or not
+    allowApi?: boolean,     // Allow scripting API on the website
+    allowPolicy?: string,   // The list of feature policies allowed
+    position: {
+        vertical: "top"|"middle"|"bottom",,
+        horizontal: "left","middle","right",
+    },
+    size: {                 // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
+        height: string,
+        width: string,
+    },
+    margin?: {              // Website margin (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
+        top?: string,
+        bottom?: string,
+        left?: string,
+        right?: string,
+    },
+}
+
+interface UIWebsite {
+    readonly id: "google123",            // Unique ID
+    url: "https://google.com",                    // Website URL
+    visible: 1,               // The website is visible or not
+    readonly allowApi: 1,     // Allow scripting API on the website
+    readonly allowPolicy: na,   // The list of feature policies allowed
+    position: {
+        vertical: "top",           // Vertical position (top, middle, bottom)
+        horizontal: "right",         // Horizontal position (left, middle, right)
+    },
+    size: {                         // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
+        height: "100px",
+        width: "100px",
+    },
+    margin?: {                      // Website margin (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
+        top?: "0px",
+        bottom?: "0px",
+        left?: "0px",
+        right?: "0px",
+    },
+    close(): Promise<void>,         // Close the current website instance
+}
+
 export {};
