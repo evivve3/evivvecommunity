@@ -22,7 +22,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('clock').subscribe(closePopup)
 
     const map: CreateUIWebsiteEvent = {
-        url:  "https://google.com",
+        url:  "https://www.google.com/",
         visible: true,
         allowApi: true,
         allowPolicy: "",   // The list of feature policies allowed
