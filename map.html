@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            margin-top: 0.5rem;
+            flex-direction: row;
+            align-items: center;
+            display: flex;
+            flex: 0 1 auto;
+        }
+        button {
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            overflow-wrap: break-word;
+            text-decoration-line: none;
+            padding: 0.25rem;
+            border-style: none;
+            height: 3rem;
+            width: 3rem;
+            margin: 0;
+            background-color: #1b1b29f2;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: #38384af2;
+        }
+        img {
+            padding: 2px;
+            height: 2rem;
+            width: 2rem;
+            user-select: none;
+            vertical-align: middle;
+            border-style: none;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="https://play.workadventu.re/iframe_api.js"></script>
+    <script>
+        /// <reference path="../node_modules/@workadventure/iframe-api-typings/iframe_api.d.ts" />
+        console.log('Guide UI Website started successfully');
+
+        window.onload = () => {
+            document.querySelector("button").addEventListener("click", triggerWebsite)
+        }
+
+        async function triggerWebsite() {
+            const mapUrl = WA.room.mapURL
+            const root = mapUrl.substring(0, mapUrl.lastIndexOf("/"))
+
+            const websites = await WA.nav.getCoWebSites()
+            if (websites.length) {
+                WA.nav.closeCoWebSite()
+            }
+            WA.nav.openCoWebSite(root + "/Guide.pdf")
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <button type="button">
+            <img draggable="false" src="guide-icon.svg" alt="Guide">
+        </button>
+    </div>
+</body>
+</html>
