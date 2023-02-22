@@ -956,9 +956,19 @@
                  "name":"openWebsite",
                  "type":"string",
                  "value":"https:\/\/app.evivve.com"
+                }, 
+                {
+                 "name":"openWebsiteTrigger",
+                 "type":"string",
+                 "value":"onaction"
+                }, 
+                {
+                 "name":"openWebsiteTriggerMessage",
+                 "type":"string",
+                 "value":"Press SPACE to open certification"
                 }],
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":67,
          "x":0,
          "y":0
