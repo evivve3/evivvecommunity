@@ -22,13 +22,13 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('clock').subscribe(closePopup)
 
     const map: CreateUIWebsiteEvent = {
-        url:  "https://google.com",
+        url:  "https://img.icons8.com/dusk/64/null/trial-version.png",
         visible: true,
         allowApi: true,
         allowPolicy: "",   // The list of feature policies allowed
         position: {
             vertical: "top",
-            horizontal: "right",
+            horizontal: "left",
         },
         size: {            // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
             width: "100px",
@@ -38,19 +38,6 @@ WA.onInit().then(() => {
 
     WA.ui.website.open(map)
 
-    const myWebsite = await WA.ui.website.open({
-        url: "https://wikipedia.org",
-        position: {
-            vertical: "middle",
-            horizontal: "middle",
-        },
-        size: {
-            height: "50vh",
-            width: "50vw",
-        },
-    });
-    
-    myWebsite.position.vertical = "top";
 
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
